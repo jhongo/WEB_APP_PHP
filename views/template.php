@@ -35,7 +35,11 @@
 </nav>
 
 
-    <h3>Hello World</h3>
+    <p>
+      <?php 
+      include_once("routes.php")
+      ?>
+    </p>
     
 </body>
 </html>
