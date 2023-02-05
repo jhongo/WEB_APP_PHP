@@ -1,11 +1,15 @@
 <?php
+
+// echo 'Controller'. $controller . '<br>';
+// echo 'Action'. $action;
     
-    //! El archivo de rutas nos da acceso a los controladores de la vista
+//! El archivo de rutas nos da acceso a los controladores de la vista y ciertas acciones
+include_once("controllers/".$controller."_controllers.php");
 
-include_once("controllers/pages_controllers.php");
+$objController = ucfirst($controller)."Controllers";
 
-$controller = new PagesControllers();
-$controller->home();
+$controller = new $objController();
+$controller->$action();
  
  
  ?>
