@@ -7,7 +7,7 @@
     <title>System</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body >
 
 <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -35,11 +35,10 @@
 </nav>
 
 
-    <p>
       <?php 
       include_once("routes.php")
       ?>
-    </p>
+
     
 </body>
 </html>
