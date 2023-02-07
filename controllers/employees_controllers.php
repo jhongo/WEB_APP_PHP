@@ -8,8 +8,11 @@ BD::createInstance();
     class EmployeesControllers{
 
         public function read(){
+
+        $employees =  EmployeeModel::readEmployees();
         include_once("views/employees/read.php");
         }
+
         public function create(){
         
         if ($_POST) {
@@ -20,6 +23,7 @@ BD::createInstance();
             $email = $_POST['inp-email'];
 
             EmployeeModel::createEmployee($name, $lastname, $phone, $email);
+            header("location:?controller=employees&&action=read");
 
         }
 
@@ -27,8 +31,21 @@ BD::createInstance();
 
         }
         public function edit(){
+        
+        $id = $_GET['id'];
+        $employee = EmployeeModel::searchEmployee($id);
+
         include_once("views/employees/edit.php");
 
+        }
+
+        public function delete(){
+
+        print_r($_GET);
+        $id = $_GET['id'];
+
+        EmployeeModel::deleteEmployee($id);
+        header("location:?controller=employees&&action=read");
         }
 
 
