@@ -59,6 +59,15 @@
         $employee = $sql->fetch();
 
         return new EmployeeModel($employee['id'], $employee['name_employee'], $employee['lastname_employee'], $employee['phone'], $employee['email']);
+    }
+
+
+    public static function updateEmployee($id, $name,$lastname,$phone,$email){
+
+        $connection = BD::createInstance();
+
+        $sql = $connection->prepare("UPDATE employees SET name_employee=?,lastname_employee=?,phone=?,email=? WHERE id=?");
+        $sql->execute(array($name, $lastname, $phone, $email, $id));
 
     }
 

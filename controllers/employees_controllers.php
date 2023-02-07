@@ -31,6 +31,19 @@ BD::createInstance();
 
         }
         public function edit(){
+            
+        if($_POST){
+            $id = $_POST['inp-id'];
+            $name = $_POST['inp-name'];
+            $lastname = $_POST['inp-lastname'];
+            $phone = $_POST['inp-phone'];
+            $email = $_POST['inp-email'];
+            
+            EmployeeModel::updateEmployee($id, $name, $lastname, $phone, $email);
+            header("location:?controller=employees&&action=read");
+        }
+
+
         
         $id = $_GET['id'];
         $employee = EmployeeModel::searchEmployee($id);

@@ -8,7 +8,7 @@
       <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-first-name">
         ID Employee
       </label>
-      <input name="inp-name" value="<?php echo $employee->id; ?>" required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Id employee">
+      <input readonly name="inp-id" value="<?php echo $employee->id; ?>" required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Id employee">
     </div>
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-first-name">
@@ -39,9 +39,15 @@
   </div>
   <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
   <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-    Registar empleado
+    Actualizar empleado
   </span>
 </button>
+
+<div class="flex space-x-2 justify-start p-1.5">
+<a href="?controller=employees&&action=read" class="text-white bg-amber-800 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-amber-800 dark:hover:bg-amber-800 ">
+    Cancelar
+</a>
+</div>
 
 </form>
 
