@@ -1,5 +1,7 @@
 <?php
 
+include_once("models/employee_model.php");
+
 include_once("connection.php");
 BD::createInstance();
     
@@ -12,6 +14,13 @@ BD::createInstance();
         
         if ($_POST) {
             print_r($_POST);
+            $name = $_POST['inp-name'];
+            $lastname = $_POST['inp-lastname'];
+            $phone = $_POST['inp-phone'];
+            $email = $_POST['inp-email'];
+
+            EmployeeModel::createEmployee($name, $lastname, $phone, $email);
+
         }
 
         include_once("views/employees/create.php");
