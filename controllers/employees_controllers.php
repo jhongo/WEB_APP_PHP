@@ -6,6 +6,11 @@
         include_once("views/employees/read.php");
         }
         public function create(){
+        
+        if ($_POST) {
+            print_r($_POST);
+        }
+
         include_once("views/employees/create.php");
 
         }
