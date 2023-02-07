@@ -1,4 +1,7 @@
 <?php
+
+include_once("connection.php");
+BD::createInstance();
     
     class EmployeesControllers{
 
